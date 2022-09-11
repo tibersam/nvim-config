@@ -6,6 +6,21 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
 
 
+
+call plug#begin()
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-airline/vim-airline', { 'do': ':UpdateRemotePlugins'}
+Plug 'vim-airline/vim-airline-themes', { 'do': ':UpdateRemotePlugins' }
+Plug 'jiangmiao/auto-pairs', { 'do': ':UpdateRemotePlugins' }
+" Python3 syntax highlighting
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+" Python3 Pep8 Syntax checking
+Plug 'nvie/vim-flake8', { 'do': ':UpdateRemotePlugins' }
+call plug#end()
+
 " Set Python3 enviroment for neovim!
 "
 let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
@@ -90,12 +105,3 @@ let g:jedi#use_splits_not_buffers = "right"
 
 
 
-call plug#begin()
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
-Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-airline/vim-airline', { 'do': ':UpdateRemotePlugins'}
-Plug 'vim-airline/vim-airline-themes', { 'do': ':UpdateRemotePlugins' }
-Plug 'jiangmiao/auto-pairs', { 'do': ':UpdateRemotePlugins' }
-call plug#end()
