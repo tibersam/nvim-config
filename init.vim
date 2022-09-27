@@ -1,4 +1,8 @@
+
+let mapleader=","
+
 highlight ExtraWhitespace ctermbg=red guibg=red
+
 match ExtraWhitespace /\s\+$/
 au BufWinEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
@@ -8,17 +12,24 @@ au BufWinLeave * call clearmatches()
 
 
 call plug#begin()
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+" Auto completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
-Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
+" Status Bar
 Plug 'vim-airline/vim-airline', { 'do': ':UpdateRemotePlugins'}
 Plug 'vim-airline/vim-airline-themes', { 'do': ':UpdateRemotePlugins' }
+" Bracket management
 Plug 'jiangmiao/auto-pairs', { 'do': ':UpdateRemotePlugins' }
+" Comment management
+Plug 'scrooloose/nerdcommenter', { 'do': ':UpdateRemotePlugins' }
 " Python3 syntax highlighting
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 " Python3 Pep8 Syntax checking
 Plug 'nvie/vim-flake8', { 'do': ':UpdateRemotePlugins' }
+" Python3 Linter
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+" Auto suggestion use jedi in the backend for Pyhton3
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Set Python3 enviroment for neovim!
@@ -71,7 +82,6 @@ function! ToggleSpell()
 endfunction
 
 " Key mappings here!
-let mapleader=","
 map <F10> :call ToggleSpell()<CR>
 
 " improved keyboard navigation
@@ -100,8 +110,7 @@ if &filetype ==# 'python'
 	setlocal noexpandtab
 endif
 let python_highlight_all = 1
-let g:jedi#auto_initialization = 0
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
-
-
 
