@@ -30,6 +30,8 @@ Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
 " Auto suggestion use jedi in the backend for Pyhton3
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
+" CTags
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " Set Python3 enviroment for neovim!
@@ -98,6 +100,11 @@ let c_ansi_constants = 1
 let c_space_errors = 1
 let c_curly_error = 1
 let c_no_if0  = 1
+set tags=./tags;
+let g:gutentags_ctags_exclude_wildignore = 1
+let g:gutentags_ctags_exclude = [
+  \'node_modules', '_build', 'build', 'CMakeFiles', '.mypy_cache', 'venv',
+  \'*.md', '*.tex', '*.css', '*.html', '*.json', '*.xml', '*.xmls', '*.ui']
 
 " Bash syntax stuff
 "
