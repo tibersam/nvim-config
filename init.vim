@@ -32,6 +32,14 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
 " CTags
 Plug 'ludovicchabant/vim-gutentags'
+" Snippet Manager
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" tabular plugin is used to format tables
+Plug 'godlygeek/tabular'
+" JSON front matter highlight plugin
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 " Set Python3 enviroment for neovim!
@@ -121,3 +129,17 @@ let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
 
+" Highlighting stuff
+" disable header folding
+let g:vim_markdown_folding_disabled = 1
+
+" do not use conceal feature, the implementation is not so good
+let g:vim_markdown_conceal = 0
+
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+"support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format
