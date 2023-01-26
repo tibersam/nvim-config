@@ -27,6 +27,8 @@ Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'nvie/vim-flake8', { 'do': ':UpdateRemotePlugins' }
 " Python3 Linter
 Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'brentyi/isort.vim'
+" Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 " Auto suggestion use jedi in the backend for Pyhton3
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim', { 'do': ':UpdateRemotePlugins' }
@@ -39,7 +41,14 @@ Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 " JSON front matter highlight plugin
 Plug 'elzr/vim-json'
+" Markdown shortcut plugin
 Plug 'plasticboy/vim-markdown'
+" C/C++ Language Server
+Plug 'tweekmonster/deoplete-clang2'
+"Plug 'zchee/deoplete-clang'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
+"Plug 'vim-pandoc/vim-pandoc'
+
 call plug#end()
 
 " Set Python3 enviroment for neovim!
@@ -114,6 +123,7 @@ let g:gutentags_ctags_exclude = [
   \'node_modules', '_build', 'build', 'CMakeFiles', '.mypy_cache', 'venv',
   \'*.md', '*.tex', '*.css', '*.html', '*.json', '*.xml', '*.xmls', '*.ui']
 
+
 " Bash syntax stuff
 "
 let g:is_bash	   = 1
@@ -143,3 +153,8 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1  " for YAML format
 let g:vim_markdown_toml_frontmatter = 1  " for TOML format
 let g:vim_markdown_json_frontmatter = 1  " for JSON format
+"let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+"let g:pandoc#filetypes#pandoc_markdown = 0
+"augroup pandoc_syntax
+"    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"augroup END
