@@ -48,6 +48,7 @@ Plug 'tweekmonster/deoplete-clang2'
 "Plug 'zchee/deoplete-clang'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'vim-pandoc/vim-pandoc'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
