@@ -22,7 +22,8 @@ Plug 'jiangmiao/auto-pairs', { 'do': ':UpdateRemotePlugins' }
 " Comment management
 Plug 'scrooloose/nerdcommenter', { 'do': ':UpdateRemotePlugins' }
 " Python3 syntax highlighting
-Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+" Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins', 'tag': '*' }
 " Python3 Pep8 Syntax checking
 Plug 'nvie/vim-flake8', { 'do': ':UpdateRemotePlugins' }
 " Python3 Linter
@@ -49,6 +50,8 @@ Plug 'tweekmonster/deoplete-clang2'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'vim-pandoc/vim-pandoc'
 Plug 'sheerun/vim-polyglot'
+
+Plug 'mrcjkb/rustaceanvim'
 
 call plug#end()
 
